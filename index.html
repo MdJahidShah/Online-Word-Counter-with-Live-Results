@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Word Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .wordbold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="mb-3">Live Word Counter</h3>
+                <p>Total: <span id="wordCountParagraph" class="wordbold">0</span> Words, and <span id="charCountParagraph" class="wordbold">0</span> Characters.</p>
+                <textarea id="textInput" class="form-control" rows="10" placeholder="Type your text here..."></textarea>
+            </div>
+            <div class="col-md-4">
+                <h4 class="mb-3">Statistics</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Words: <span id="wordCount">0</span></li>
+                    <li class="list-group-item">Characters: <span id="charCount">0</span></li>
+                    <li class="list-group-item">Lines: <span id="lineCount">0</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("textInput").addEventListener("input", function () {
+            let text = this.value.trim();
+            let words = text.split(/\s+/).filter(Boolean).length;
+            document.getElementById("wordCount").textContent = words;
+            document.getElementById("wordCountParagraph").textContent = words;
+            document.getElementById("charCount").textContent = text.length;
+            document.getElementById("charCountParagraph").textContent = text.length;
+            let lines = text.split(/\n+/).filter(Boolean).length;
+            document.getElementById("lineCount").textContent = lines;
+        });
+    </script>
+</body>
+</html>
