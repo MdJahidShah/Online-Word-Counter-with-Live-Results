@@ -60,5 +60,5 @@ This project is open-source and available under the **MIT License**.
 ---
 
 📌 **Author:** [Md Jahid Shah](https://github.com/mdjahidshah)  
-📌 **Live Demo:** [GitHub Pages Link](https://digitoolhub.github.io/word-counter-tool/)
+📌 **Live Demo:** [Web Pages Link](https://digitoolhub.github.io/word-counter-tool/)
 
